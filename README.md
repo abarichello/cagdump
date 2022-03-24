@@ -6,7 +6,7 @@ Dump data from [CAGR](https://cagr.sistemas.ufsc.br/) into a JSON file for analy
 
 Field|Description
 -|-
-`name`|Nome do curso ex: Paradigmas de Programação
+`name`|Nome da matéria ex: Paradigmas de Programação
 `code`|Código da disciplina ex: INE5401
 `class`|Código de turma ex: 04208A
 `semester`|Semestre da disciplina

@@ -1,0 +1,9 @@
+# elm-package generated files
+elm-stuff
+
+# elm-repl generated files
+main.js
+repl-temp-*
+*.code-workspace
+*.html
+!index.html
