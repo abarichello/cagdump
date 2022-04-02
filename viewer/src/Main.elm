@@ -39,11 +39,15 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
+    let
+        header =
+            div [ id "header" ]
+                [ text "CAGR Dump"
+                , input [ id "search", placeholder "Nome ou Matrícula de professor/aluno", onInput ChangeStudentQuery ] []
+                ]
+    in
     div []
-        [ div [ id "header" ]
-            [ text "CAGR Dump"
-            , input [ id "search", placeholder "Nome ou Matrícula", onInput ChangeStudentQuery ] []
-            ]
+        [ header
         , div [ id "content" ]
             []
         ]
