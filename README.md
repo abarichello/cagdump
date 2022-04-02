@@ -1,10 +1,10 @@
 # cagdump
 
-Dump data from [CAGR](https://cagr.sistemas.ufsc.br/) into a JSON file for analysis.
+Dados extraídos do [CAGR](https://cagr.sistemas.ufsc.br/) em formato JSON.
 
 #### JSON Structure:
 
-Field|Description
+Campo|Descrição
 -|-
 `name`|Nome da matéria ex: Paradigmas de Programação
 `code`|Código da disciplina ex: INE5401
@@ -13,7 +13,7 @@ Field|Description
 `students`|Lista de estudantes (ver extrutura abaixo)
 
 Estudante:
-Field|Description
+Campo|Descrição
 -|-
 `name`|Nome do estudante
 `student_id`|Matrícula do estudante
