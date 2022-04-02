@@ -1,17 +1,18 @@
 module Main exposing (Msg(..), main, update, view)
 
 import Browser
-import Html exposing (Html, div, embed, text)
-import Html.Attributes exposing (height, id, src, width)
+import Html exposing (Html, div, embed, input, text)
+import Html.Attributes exposing (height, id, placeholder, src, width)
+import Html.Events exposing (onInput)
 
 
 type alias Model =
-    { none : String
+    { queryStr : Maybe String
     }
 
 
 type Msg
-    = None
+    = ChangeStudentQuery String
 
 
 main : Program () Model Msg
@@ -26,21 +27,23 @@ main =
 
 init : ( Model, Cmd Msg )
 init =
-    ( { none = "a" }, Cmd.none )
+    ( { queryStr = Nothing }, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        None ->
-            ( model, Cmd.none )
+        ChangeStudentQuery query ->
+            ( { model | queryStr = Just query }, Cmd.none )
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ div [ id "header" ] [ text "Bota o nome do amiguinho:" ]
-        , div [ id "content" ]
-            [
+        [ div [ id "header" ]
+            [ text "CAGR Dump"
+            , input [ id "search", placeholder "Nome ou Matrícula", onInput ChangeStudentQuery ] []
             ]
+        , div [ id "content" ]
+            []
         ]

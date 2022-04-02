@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import List
 
 
-_PATH = Path(__file__).parent / "credentials.json"
+_PATH = Path(__file__).parent.parent / "credentials.json"
 
 
 def load_credentials():
