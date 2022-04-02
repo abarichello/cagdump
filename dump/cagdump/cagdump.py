@@ -2,13 +2,13 @@ import sys
 import json
 from pathlib import Path
 from cagrex import CAGR
-from fixes import INE_COURSE_NAMES_IN_20171
 from utils import load_credentials, semester_range
+
+# from fixes import INE_COURSE_CODES
 
 
 CREDENTIALS = load_credentials()
 
-# todo: move to input
 CLASS_CODES_TO_SEARCH = ["MTM", "EEL"]
 SEMESTER_RANGE = semester_range(2016, 2021, False)
 
