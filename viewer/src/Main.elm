@@ -14,6 +14,7 @@ type alias Model =
     { data : List Course
     , queryStr : Maybe String
     , filteredCourses : List Course
+    , debug : Bool
     }
 
 
@@ -22,26 +23,22 @@ type Msg
     | ChangeStudentQuery String
 
 
-main : Program () Model Msg
+main : Program Bool Model Msg
 main =
     Browser.element
-        { init = \() -> init
+        { init = init
         , update = update
         , subscriptions = \_ -> Sub.none
         , view = view
         }
 
 
-init : ( Model, Cmd Msg )
-init =
-    let
-        debug =
-            -- TODO: move to ports
-            True
-    in
+init : Bool -> ( Model, Cmd Msg )
+init debug =
     ( { data = []
       , queryStr = Nothing
       , filteredCourses = []
+      , debug = debug
       }
     , Cmd.map RequestData (Request.fetchData debug)
     )
