@@ -1,4 +1,4 @@
-module Data exposing (Course, Student, studentDecoder)
+module Data exposing (Course, Student, courseDecoder, dataDecoder, studentDecoder)
 
 import Json.Decode as Decode exposing (Decoder)
 import Json.Decode.Field as Field
@@ -17,6 +17,11 @@ type alias Student =
     { name : String
     , studentID : String
     }
+
+
+dataDecoder : Decoder (List Course)
+dataDecoder =
+    Decode.list courseDecoder
 
 
 courseDecoder : Decoder Course
