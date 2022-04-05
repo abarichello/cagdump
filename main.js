@@ -6463,7 +6463,7 @@
 							_List_Nil,
 							_List_fromArray(
 								[
-									$elm$html$Html$text('Inclui matérias com código INE, MTM e EEL')
+									$elm$html$Html$text('Inclui matérias com código INE, MTM e EEL desde 2016.1')
 								])),
 							A2($elm$html$Html$br, _List_Nil, _List_Nil),
 							searchInput
