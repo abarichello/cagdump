@@ -47,7 +47,7 @@ init debug =
 isStudentMember : String -> Course -> Bool
 isStudentMember studentInfo course =
     List.any
-        (\s -> studentInfo == s.name || studentInfo == s.studentID)
+        (\s -> String.toLower s.name == studentInfo || s.studentID == studentInfo)
         course.students
 
 
@@ -73,10 +73,10 @@ update msg model =
                     List.filter (\course -> isStudentMember query course) model.data
                         |> List.sortBy .semester
 
-                q =
+                queryStr =
                     Just (String.toLower query)
             in
-            ( { model | queryStr = q, filteredCourses = filtered }, Cmd.none )
+            ( { model | queryStr = queryStr, filteredCourses = filtered }, Cmd.none )
 
 
 tableHeaderRow : Html Msg
